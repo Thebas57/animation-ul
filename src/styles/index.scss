@@ -1,0 +1,58 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+  background-color: rgb(227, 210, 186);
+}
+
+.App {
+  color: rgb(208, 26, 26);
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+.line {
+  display: flex;
+  justify-content: space-between;
+  height: 15vw;
+  border-bottom: 1px solid black;
+  padding: 0 3vw;
+}
+
+.first {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  h3 {
+    font-size: 7vw;
+    font-weight: 100;
+  }
+  span {
+    text-decoration: underline;
+    margin-right: 2vw;
+    margin-bottom: 3vw;
+    font-size: 2.3vw;
+  }
+}
+
+.second {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10vw;
+  text-align: right;
+  span{
+    font-size: 1vw;
+  }
+  h5{
+    font-size: 1.2vw;
+    font-weight: 300;
+    margin: 0;
+    white-space: nowrap;
+  }
+}
