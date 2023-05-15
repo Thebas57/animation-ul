@@ -6,10 +6,56 @@
 body {
   background-color: rgb(227, 210, 186);
   font-family: "Crimson Text", serif;
+  cursor: none;
 }
 
 .App {
   color: rgb(208, 26, 26);
+}
+
+.cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(208, 26, 26);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  height: 10vw;
+  justify-content: space-around;
+  border-bottom: 2px solid black;
+  h3 {
+    font-size: 5vw;
+    font-weight: 100;
+  }
+  span {
+    font-size: 2.3vw;
+  }
+}
+
+.scroll {
+  height: 10vw;
+  border-bottom: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  span {
+    &::after {
+      content: "";
+      position: absolute;
+      height: 3vh;
+      background-color: black;
+      width: 2px;
+      left: 50%;
+      margin-top: 20px;
+    }
+  }
 }
 
 ul {
@@ -45,36 +91,30 @@ ul {
     transition: transform 1s ease-out;
   }
   .img-back {
-    &:before {
-      position: absolute;
-      content: "";
-      left: 0;
-      bottom: 0;
-      height: 100%;
-      width: 100%;
-      background-image: url("../../public/echec.jpg");
-      background-size: 100%;
-      transition: background-size 1s ease-out;
-      background-position: center;
-      z-index: -1;
-    }
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url("../../public/echec.jpg");
+    background-size: 100%;
+    transition: background-size 1s ease-out;
+    background-position: center;
+    z-index: -1;
+    background-repeat: no-repeat;
+    left: 0;
     &:after {
       content: "";
       position: absolute;
       transform: translateY(0%);
       transition: transform 0.5s ease-out;
-
-      inset: 0;
       background-color: rgb(227, 210, 186);
       z-index: -1;
+      inset: 0;
     }
   }
   &:hover {
-    color: aliceblue;
+    color: rgb(227, 210, 186);
     .img-back {
-      &:before {
-        background-size: 120%;
-      }
+      background-size: 120%;
       &:after {
         transform: translateY(-100%);
       }
